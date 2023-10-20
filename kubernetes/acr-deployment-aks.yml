@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acreureka-localdocker-deployment
+  labels:
+    app: acreureka-localdocker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acreureka-localdocker
+  template:
+    metadata:
+      labels:
+        app: acreureka-localdocker
+    spec:
+      containers:
+        - name: acraluacreurekamno-localdocker
+         # image: __DOCKER_REPOSITORY__/__IMAGE_NAME__:__IMAGE_TAG__
+          image: aksforacrcoderpath.azurecr.io/coderpath/aks-ms-acreureka:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+          limits:
+            cpu: 300m
+            memory: "100Mi"
+          requests:
+            cpu: 100m
+            memory: "50Mi"
