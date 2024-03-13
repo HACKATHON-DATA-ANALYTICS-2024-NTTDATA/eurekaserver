@@ -47,6 +47,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/huawei-eurekaserver:latest   
+          tags: ${{ secrets.DOCKER_USERNAME }}/eurekaserver:latest   
         
      
